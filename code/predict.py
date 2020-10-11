@@ -19,7 +19,7 @@ def process_one_image(pan_file,meta_file,anno_file):
         if ((len(approx) > 20) and area >= 30):
             contour_list.append(contour)
 
-    with rasterio.open('ffe6d89f4c1a6af54a3cfdc01f4bc2f5_PAN.tif') as dataset:
+    with rasterio.open(pan_file) as dataset:
         print(dataset.name)
         print(dataset.bounds)
         print(dataset.bounds.left)
