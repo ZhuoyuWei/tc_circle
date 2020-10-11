@@ -8,6 +8,7 @@ import json
 
 
 def process_one_image(pan_file,meta_file,anno_file):
+
     img = cv2.imread(pan_file)
     bilateral_filtered_image = cv2.bilateralFilter(img, 5, 175, 175)
     edge_detected_image = cv2.Canny(bilateral_filtered_image, 75, 200)
@@ -75,6 +76,6 @@ if __name__=='__main__':
         meta_file=os.path.join(image_dir,imageid+'_metadata.json')
         anno_file=os.path.join(output_dir,imageid+'_anno.geojson')
 
-    process_one_image(pan_file,meta_file,anno_file)
+        process_one_image(pan_file,meta_file,anno_file)
 
 
