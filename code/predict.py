@@ -21,9 +21,9 @@ def process_one_image(pan_file,meta_file,anno_file):
             contour_list.append(contour)
 
     with rasterio.open(pan_file) as dataset:
-        print(dataset.name)
-        print(dataset.bounds)
-        print(dataset.bounds.left)
+        #print(dataset.name)
+        #print(dataset.bounds)
+        #print(dataset.bounds.left)
 
         row_pix=(dataset.bounds.bottom - dataset.bounds.top)/img.shape[0]
         col_pix=(dataset.bounds.right-dataset.bounds.left)/img.shape[1]
@@ -46,7 +46,7 @@ def process_one_image(pan_file,meta_file,anno_file):
     for contour in contour_list:
         nodes=[]
         first_node=None
-        print(contour)
+        #print(contour)
         for point in contour:
             point=point[0]
             coordinates=[dataset.bounds.left+point[1]*col_pix,
