@@ -8,6 +8,7 @@ import json
 
 
 def process_one_image(pan_file,meta_file,anno_file):
+    print('process {}'.format(pan_file))
 
     img = cv2.imread(pan_file)
     bilateral_filtered_image = cv2.bilateralFilter(img, 5, 175, 175)
