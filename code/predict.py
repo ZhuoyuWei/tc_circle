@@ -46,7 +46,9 @@ def process_one_image(pan_file,meta_file,anno_file):
     for contour in contour_list:
         nodes=[]
         first_node=None
+        print(contour)
         for point in contour:
+            point=point[0]
             coordinates=[dataset.bounds.left+point[1]*col_pix,
                          dataset.bounds.top+point[0]*row_pix]
             if first_node is None:
